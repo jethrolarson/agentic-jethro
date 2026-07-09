@@ -1,0 +1,9 @@
+{
+  "name": "hazard-driven-skills",
+  "description": "Provides the hazard-driven-skills skill: write, edit, and review Claude SKILL.md files so they transfer checkable causal knowledge instead of collapsing into thought-terminating procedures.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Jethro Larson",
+    "email": "jethrolarson@gmail.com"
+  }
+}

@@ -6,9 +6,9 @@
   },
   "plugins": [
     {
-      "name": "hazard-driven-skills",
+      "name": "agentic-jethro",
       "source": "./",
-      "description": "Write, edit, and review Claude skill files as falsifiable hazard claims instead of thought-terminating procedures."
+      "description": "Jethro's collection of Claude Code skills. Currently: hazard-driven-skills — write, edit, and review skill files as falsifiable hazard claims instead of thought-terminating procedures."
     }
   ]
 }

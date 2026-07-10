@@ -1,33 +1,21 @@
-# hazard-driven-skills plugin
+# hazard-driven-skills
 
-A Claude Code plugin that provides the **hazard-driven-skills** skill.
+A Claude Code plugin for writing skills that inform the agent's judgment instead of scripting it.
 
-The skill helps you write, edit, and review Claude `SKILL.md` files so they
-inform the executing agent's judgment (with checkable "because" claims) instead
-of collapsing into rigid, thought-terminating step-by-step procedures.
+Agent-written skills collapse into procedure — "always do X," fixed steps — which reads as thorough but is thought-terminating: the executing agent complies without checking whether the case in front of it matches. This skill makes Claude write and review `SKILL.md` files as **falsifiable hazard claims** (what we observed, why it happens, what to weigh) so the next agent can verify whether a risk actually applies — and so stale guidance can be proven dead and pruned instead of accumulating forever.
 
-## What's inside
+## Install
 
 ```
-.claude-plugin/plugin.json          plugin manifest
-skills/hazard-driven-skills/
-  SKILL.md                          the skill (shared principles + routing)
-  references/
-    authoring-new.md                drafting a brand-new skill
-    distilling-from-failure.md      encoding a failure you just watched
-    maintenance.md                  editing / reverifying an existing skill
+/plugin marketplace add jethrolarson/agentic-jethro
+/plugin install hazard-driven-skills@agentic-jethro
 ```
 
-## The skill triggers when you
+That's it — the skill triggers automatically whenever you ask Claude to write, update, review, or distill a skill.
 
-- ask to "write a skill" or "turn this workflow into a skill"
-- want to update or clean up an existing skill
-- want to encode a failure so an agent doesn't repeat it
-- are reviewing a skill that feels overly prescriptive or bloated
+## What it covers
 
-## Installing
-
-Add this repo as a plugin marketplace / plugin source in Claude Code (via the
-`/plugin` command or your marketplace configuration), then enable the
-`hazard-driven-skills` plugin. Once enabled, the skill is available to the agent
-automatically based on its description.
+- **The hazard test** — every instruction needs a checkable "because"; filler-becauses ("best practice") get caught
+- **Authoring** — interviews you for the causal mechanism instead of transcribing vague rules
+- **Distilling from failure** — separates the generalizable hazard from the one-off fix, with provenance
+- **Maintenance** — reverify, prune falsified entries, keep multi-file skills in sync

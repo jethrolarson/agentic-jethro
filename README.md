@@ -1,6 +1,6 @@
 # agentic-jethro
 
-Jethro's collection of Claude Code skills, packaged as a plugin.
+A collection of useful skills for agentic programming. Well, one at the moment but it's a start!
 
 ## Install
 
@@ -9,12 +9,15 @@ Jethro's collection of Claude Code skills, packaged as a plugin.
 /plugin install agentic-jethro@agentic-jethro
 ```
 
-Skills trigger automatically once installed.
-
 ## Skills
 
 ### hazard-driven-skills
 
 Makes Claude write and review `SKILL.md` files as **falsifiable hazard claims** instead of scripts.
 
-Agent-written skills collapse into procedure — "always do X," fixed steps — which reads as thorough but is thought-terminating: the executing agent complies without checking whether the case in front of it matches. This skill enforces a checkable "because" on every instruction (what we observed, why it happens, what to weigh) so the next agent can verify whether a risk actually applies — and so stale guidance can be proven dead and pruned instead of accumulating forever. Covers authoring new skills, distilling skills from watched failures, and maintaining existing ones.
+By default skills written by agents are overspecified, procedural, and thought-terminating. Claude will give the next agent a confident but wrong instruction that it will often thoughtlessly execute without considering the context fully. This skill guides the agent to work with you to write skills that are hazard-driven to prevent pitfalls while still letting the executing agent use its intelligence. This skill will help you create, update and maintain skill files that minimize accretion and discourage creating zombie agents.
+
+Example prompts:
+* `Can you use hazard driven skills to prevent that last screw-up next time?`
+* `Can you audit my-unit-testing-guide skill using hazard-driven-skills?`
+* `Seems like you wasted a lot of tokens there, can you update the oncall-ops skill so the next agent doesn't do the same?`

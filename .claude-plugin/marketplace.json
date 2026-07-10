@@ -1,0 +1,14 @@
+{
+  "name": "agentic-jethro",
+  "owner": {
+    "name": "Jethro Larson",
+    "email": "jethrolarson@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "hazard-driven-skills",
+      "source": "./",
+      "description": "Write, edit, and review Claude skill files as falsifiable hazard claims instead of thought-terminating procedures."
+    }
+  ]
+}

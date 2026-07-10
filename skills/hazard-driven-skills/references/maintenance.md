@@ -1,20 +1,18 @@
 # Editing and maintaining an existing skill
 
-Read this when a user is coming back to an existing skill to add, change, or clean up entries — as opposed to drafting one from nothing.
+## Offer to reverify while you're in there
 
-## Offer to reverify when touching an existing skill
-
-Provenance (see `distilling-from-failure.md`) only pays off if something actually acts on it. Don't wait for a scheduled audit that probably won't happen — when a user comes back to add to or edit an existing skill, that's the natural moment to check. Before or after making the requested change, look at the anchored entries already in the file and ask whether the user wants to reverify any that predate significant changes to the relevant code (a new commit range, a version bump, a rewrite of the area in question).
-
-This should be a suggestion, not a blocking step — the user came to make a specific edit, not necessarily to audit the whole file. Something like: "While I'm in here — a few of these entries are anchored to commits from before [change]. Want me to check whether they still hold, or is now not the time?" If they decline, proceed with the original request; the offer having been made is what matters, since it's what keeps staleness from silently accumulating.
+Provenance only pays off if something acts on it, and scheduled audits don't happen. A user coming back to edit a skill *is* the natural checkpoint: offer to recheck entries anchored before significant changes to the relevant code (new commit range, version bump, rewrite). A suggestion, not a gate — "a few of these entries predate [change]; want me to check they still hold, or is now not the time?" If declined, proceed with the original request; the offer having been made is what keeps staleness from silently accumulating.
 
 ## Prune, don't just accumulate
 
-Reverification has two possible honest outcomes, and both are wins: the entry still holds (re-date the provenance to reflect the recheck), or it's been falsified by a change in the code and should be deleted outright. A skill that only ever accumulates entries is failing the same way an over-cautious procedure does — bulk mistaken for rigor. Provenance exists specifically to make deletion possible with confidence, so treat a successful prune as equally good an outcome as a successful reverification, not a fallback.
+Reverification has two honest outcomes, both wins: the entry still holds (re-date the provenance) or it's been falsified (delete it outright). A skill that only accumulates fails the same way an over-cautious procedure does — bulk mistaken for rigor. Treat a confident prune as equal in value to a confirmation, not a fallback.
 
-## Watch for reference-file rot specifically
+Pruning only works on entries stated as falsifiable claims — an entry that can't in principle be proven wrong ("be careful with X") will survive every audit unexamined. But vagueness usually means the mechanism went unrecorded, not that the knowledge is dead, so the move is recovery, not removal: ask the user what failure the entry was guarding against (the interview in `authoring-new.md`) and restate it as a checkable hazard. Deletion is for when nobody can recover the "because" anymore — and that's the user's call to make, not the auditor's.
 
-A skill with multiple reference files can rot in a way a single-file skill can't: entries drift out of sync with each other, a reference file stops being pointed to from SKILL.md and goes silently unread, or two reference files end up saying slightly different things about the same hazard. When editing a multi-file skill, check that:
+## Multi-file rot
 
-- SKILL.md's routing still names every reference file that exists, and points to each one under the condition it's actually meant to be read
-- No two reference files make overlapping hazard claims that have drifted apart — if the same hazard is referenced from two places, it should live in one and be pointed to from the other, not be duplicated
+Reference files rot in ways a single file can't: SKILL.md stops routing to one (it goes silently unread), or two files drift into slightly different claims about the same hazard. When editing a multi-file skill, check that:
+
+- SKILL.md's routing names every reference file that exists, each under the condition it's actually meant to be read
+- Any hazard referenced from two places lives in one and is pointed to from the other — never duplicated

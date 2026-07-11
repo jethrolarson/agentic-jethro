@@ -4,7 +4,7 @@ Users know *that* something went wrong before they know *why* in checkable terms
 
 - **Mechanism missing:** "What actually breaks when this happens, and why?" Don't accept "it caused problems" — that's a filler-because.
 - **Mechanism present, boundary missing:** "Is there a case where this *doesn't* apply?" An unexamined "always" is the exact pattern to catch, whether it comes from Claude or from the user's framing.
-- **Fix given without its failure:** ask what the fix was a response to. An action without its originating hazard is a procedure by definition — recover the "why" before encoding the "what."
+- **Fix given without its failure:** ask what the fix was a response to. An action without its originating hazard is a procedure by definition — recover the "why" before encoding the "what." Fabrication risk concentrates exactly here: an agent improving bare rules with their author unreachable invented incident history ("learned the hard way") and shipped it inside the artifact, confessing only in commentary the artifact's readers would never see (`docs/validation.md`, probe 2). A rule whose history is lost gets encoded as "unjustified, kept pending recovery" — not given a plausible story.
 
 Interview in proportion to vagueness: if the mechanism is already clear and checkable, just write it. Drafting a best guess and flagging it back ("I'm inferring the risk is X — right?") beats blocking on perfection — but a round-trip that produces a plausible-sounding *unverified* "because" is the same failure, slower.
 

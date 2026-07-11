@@ -30,5 +30,6 @@ Size is a warning sign, not thoroughness. A skill grown by accumulation, with no
 - **Drafting a new skill** → `references/authoring-new.md` — interviewing for the mechanism; when exact steps are legitimately warranted
 - **Encoding a failure an agent just made** → `references/distilling-from-failure.md` — separating the hazard from the fix; attaching provenance
 - **Editing an existing skill** → `references/maintenance.md` — reverifying, pruning, multi-file sync
+- **Auditing this skill's own specimens** → `references/provenance.md` — maintainer metadata only; not needed while executing the skill
 
 If the task spans modes, read both files.

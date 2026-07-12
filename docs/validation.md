@@ -1,6 +1,8 @@
 # Validation probes
 
-The README claims the nine-line prompting philosophy generates this skill's methodology on its own. This document is the evidence: four probes run 2026-07-11, each a fresh subagent (claude-fable-5) given **only** the philosophy text and a task — no tools, no file access, no skills. The full CLAUDE.md text was inlined in every prompt; only the task varied.
+The README claims the prompting philosophy generates this skill's methodology on its own. This document is the evidence: four probes run 2026-07-11, each a fresh subagent (claude-fable-5) given **only** the philosophy text and a task — no tools, no file access, no skills. The full CLAUDE.md text was inlined in every prompt; only the task varied.
+
+**Version note:** these probes ran against the philosophy's original prose wording (commit `068815c`). The CLAUDE.md was later revised into numbered, compressed form; the revision has not been probe-tested. The probes remain evidence for the *content* both wordings carry; rerun them against the current text to attach them to it.
 
 **Reproduction:** spawn a fresh agent, paste the philosophy from the README, append the task prompt, forbid tool use. One known contamination in the original runs: the subagents ran inside this repo's session, so the skill's *trigger description* was visible in their environment. It leaks "don't collapse into scripts" but none of the specifics scored below.
 

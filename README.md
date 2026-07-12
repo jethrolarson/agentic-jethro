@@ -24,7 +24,7 @@ Example prompts:
 
 ### prompting
 
-The nine-line philosophy that hazard-driven-skills is built on, packaged as a skill of its own. Fires whenever Claude writes instructions for another agent to execute — prompts, specs, subagent tasks, CLAUDE.md content — and keeps them justified, falsifiable, and minimal. Installed with the plugin; nothing extra to do.
+The prompting philosophy that hazard-driven-skills is built on, packaged as a skill of its own. Fires whenever Claude writes instructions for another agent to execute — prompts, specs, subagent tasks, CLAUDE.md content — and keeps them justified, falsifiable, and minimal. Installed with the plugin; nothing extra to do.
 
 ## The philosophy
 
@@ -41,13 +41,15 @@ What you're installing:
 ```markdown
 # Prompting
 
-Instructions to agent should include justification. Without that agents become dumb, compliant zombies.
+1. Prompt is *for* an agent. Write for and understand intended agent's knowledge and capability and *trust* them appropriately.
 
-Sound justifications are falsifiable. Agent can confirm guidance is applicable and diverge or push back. False guidance can be corrected and cleaned up. Unfalsifiable guidance can only accumulate.
+2. Good prompts include *justification*. Agents without reason comply thoughtlessly. Thoughtful agent desirable.
 
-Good instructions are minimum descriptions of the intent, values, boundaries, hazards, and outcome. And only what cannot be easily inferred by the target agent. Understand your reader's knowledge and capability and trust them appropriately. Excess description limits agent intelligence and creativity for no benefit.
+3. Sound justifications *falsifiable*. Reason aligns agent to goal. Prevents misapplication. Agent assesses instruction against justification *within context* and can push back or pivot. False guidance can be tested and cleaned up. Unfalsifiable guidance accretes waste.
 
-Self-apply these rules before delivering — early drafts of this document ignored recursive application.
+4. Good instructions are *minimum* description of intent/values/boundaries/hazards/outcome. Alignment more important than precision. Excess description limits autonomy for no benefit. Every word tell.
+
+5. Self-apply these rules before delivering/executing prompt. Reflection aids alignment. Catches laziness.
 ```
 
-Why believe nine lines do anything? Fresh agents given only this text reconstructed the skill's methodology one-shot, and wrote specs that flagged unknowns as open questions instead of inventing requirements. The one trap they still fell into — fabricating plausible justifications for existing rules whose history was lost — is exactly what the skill exists to guard. Transcripts and reproduction instructions in [docs/validation.md](docs/validation.md).
+Why believe a few lines do anything? Fresh agents given only this philosophy (in its earlier prose wording) reconstructed the skill's methodology one-shot, and wrote specs that flagged unknowns as open questions instead of inventing requirements. The one trap they still fell into — fabricating plausible justifications for existing rules whose history was lost — is exactly what the skill exists to guard. Transcripts and reproduction instructions in [docs/validation.md](docs/validation.md).

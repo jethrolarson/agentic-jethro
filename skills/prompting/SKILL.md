@@ -5,16 +5,18 @@ description: Use whenever writing instructions for another agent to execute — 
 
 # Prompting
 
-Instructions to agent should include justification. Without that agents become dumb, compliant zombies.
+1. Prompt is *for* an agent. Write for and understand intended agent's knowledge and capability and *trust* them appropriately.
 
-Sound justifications are falsifiable. Agent can confirm guidance is applicable and diverge or push back. False guidance can be corrected and cleaned up. Unfalsifiable guidance can only accumulate.
+2. Good prompts include *justification*. Agents without reason comply thoughtlessly. Thoughtful agent desirable.
 
-Good instructions are minimum descriptions of the intent, values, boundaries, hazards, and outcome. And only what cannot be easily inferred by the target agent. Understand your reader's knowledge and capability and trust them appropriately. Excess description limits agent intelligence and creativity for no benefit.
+3. Sound justifications *falsifiable*. Reason aligns agent to goal. Prevents misapplication. Agent assesses instruction against justification *within context* and can push back or pivot. False guidance can be tested and cleaned up. Unfalsifiable guidance accretes waste.
 
-Self-apply these rules before delivering — early drafts of this document ignored recursive application.
+4. Good instructions are *minimum* description of intent/values/boundaries/hazards/outcome. Alignment more important than precision. Excess description limits autonomy for no benefit. Every word tell.
+
+5. Self-apply these rules before delivering/executing prompt. Reflection aids alignment. Catches laziness.
 
 ---
 
-Probe-tested: fresh agents given only the text above reconstructed a hazard-driven skill methodology one-shot and wrote specs that flagged unknowns as open questions with safe defaults instead of inventing requirements (`docs/validation.md` in this plugin's repo). Known residual hazard: when asked to justify existing rules whose history is lost, agents fabricate plausible incident history rather than surfacing the gap — if you can't recover a real "because," write "unjustified, kept pending recovery," not a story.
+Probe-tested (2026-07-11, against the prior prose wording — see `docs/validation.md` in this plugin's repo): fresh agents given only this philosophy reconstructed a hazard-driven skill methodology one-shot and wrote specs that flagged unknowns as open questions with safe defaults instead of inventing requirements. Known residual hazard: when asked to justify existing rules whose history is lost, agents fabricate plausible incident history rather than surfacing the gap — if you can't recover a real "because," write "unjustified, kept pending recovery," not a story.
 
 <!-- Canonical copy: CLAUDE.md at the repo root. Edit there, mirror here. -->

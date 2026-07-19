@@ -16,3 +16,5 @@ Reference files rot in ways a single file can't: SKILL.md stops routing to one (
 
 - SKILL.md's routing names every reference file that exists, each under the condition it's actually meant to be read
 - Any hazard referenced from two places lives in one and is pointed to from the other — never duplicated
+
+Mirrors hide outside the file list too. Observed 2026-07-19, three in one session: a README display copy drifted stale at three sites; a hook's injected text kept a stale rule number after a renumbering; and the *installed plugin copy* of that hook lagged the repo fix — a mirror no in-repo check can reach. When hunting drift, enumerate every copy that exists, not every copy the skill names.

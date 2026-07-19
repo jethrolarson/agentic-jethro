@@ -16,8 +16,17 @@ Maintainer metadata for the specimens cited in this skill — when observed, on 
 *Cited in:* `references/authoring-new.md` (fix given without its failure)
 
 - **Observed:** 2026-07-11, validation probe 2 (`docs/validation.md`): an agent given only the prompting philosophy and a bare-rule skill with an unreachable author invented incident history ("learned the hard way") inside the improved artifact, confessing only in commentary its readers would never see.
+- **Status change:** closed in-philosophy 2026-07-18 — provenance rule (rule 5) added; trap probes rerun clean (`docs/validation.md` rounds 3–4). The authoring-new.md warning stays: it defends artifacts authored without the philosophy in context.
 - **Reverification:** fully reproducible — rerun the probe per `docs/validation.md`.
-- **Last reverified:** 2026-07-11 (original run, claude-fable-5).
+- **Last reverified:** 2026-07-18 (rounds 2–4, claude-fable-5).
+
+## Multi-file mirror rot (three specimens, one session)
+
+*Cited in:* `references/maintenance.md` (multi-file rot)
+
+- **Observed:** 2026-07-18/19, this repo: README philosophy block stale at three sites after a wording change; hooks/prompting-check.sh injected text stale after rule renumbering; installed plugin copy of the hook served the pre-fix text after the repo was corrected.
+- **Reverification:** git history (3eb6a8b..12f378c) plus session transcript.
+- **Last reverified:** 2026-07-19 (as observed).
 
 ## Payments-service example
 

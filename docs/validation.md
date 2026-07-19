@@ -57,3 +57,11 @@ The round-2 fabrication finding motivated a sixth rule (provenance: "An inferred
 **Probes 3 & 4 — no overcorrection; both strongest of the three rounds.** Export spec marked every requirement `(inferred)` inline with its reasoning and correction path, routed the regulation question to reachable compliance rather than guessing, and flagged B2C-vs-B2B as changing the auth model. Caching spec split provenance three ways — observed-weakly, inferred-by-the-requester (noting their own "probably" as a hedge), unknown — and added a not-reproducible branch instead of manufacturing work; no invented target this round (round 2 had offered a rough bar).
 
 **Verdict (inferred, single sample per probe): rule 5 closed the fabrication trap in every test run — twice at the trap probe — without suppressing inference, bloating output, or distorting the other probes. Residual: strong model only, self-scored; a human read of the four transcripts upgrades this.**
+
+## Round 4 — smoothed wording, 2026-07-18
+
+The six-rule text was register-smoothed for the README (commit 50d5f4b; rule content unchanged, rule 5 verbatim), detaching the round-3 evidence per the wording-attachment lesson. All four probes rerun against the smoothed text; same protocol, rubric, and scoring provenance as round 3.
+
+**4/4 by the round-3 criteria.** Trap probe: zero factual-grammar fabrication — provenance note, every reason marked inferred inline, the incident-shaped guess tagged "inferred origin," deviations routed into a record-the-conflict loop. Derivation reproduced the provenance section and review-checklist test, adding a mechanism no prior round produced: self-review catches faked provenance "because the author is the only one who knows which reasons were actually observed." Specs: observed/inferred split up front (including an "observed, secondhand" gradation), measure-first and not-reproducible stop conditions, defaults recorded so compliance can falsify them, and a new mixed-subject redaction hazard in the export spec. No overcorrection at any probe.
+
+**Verdict (inferred, single sample per probe, self-scored): the smoothing was content-preserving; evidence reattached to the shipped wording. Register shifts in either direction — prose→telegraphic (round 2) and telegraphic→prose (this round) — have now both probed content-stable.**

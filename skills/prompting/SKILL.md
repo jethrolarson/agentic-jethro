@@ -1,6 +1,6 @@
 ---
 name: prompting
-description: Use when writing instructions for another agent — prompts, specs, CLAUDE.md or AGENTS.md content, subagent task descriptions, delegation of any kind. Improves agent alignment without suppressing intelligence. See agentic-jethro/hazard-driven-skills skill authoring specifically.
+description: Use when writing for another agent to execute or a future agent to rely on — prompts, specs, CLAUDE.md or AGENTS.md content, subagent task descriptions, memory entries, decision records, delegation of any kind. Improves agent alignment without suppressing intelligence. See agentic-jethro/hazard-driven-skills for skill authoring specifically.
 ---
 # Prompting
 

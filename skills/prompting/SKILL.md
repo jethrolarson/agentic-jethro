@@ -12,4 +12,6 @@ description: Use when writing for another agent to execute or a future agent to 
 
 4. Good instructions are *minimum description* of intent/values/boundaries/hazards/outcome. Excess description limits autonomy for no benefit. Every word should serve alignment.
 
-5. Self-apply these rules before delivering/executing prompt. Reflection aids alignment. Catches laziness.
+5. Justifications need explicit provenance. An inferred reason stated as observed is a lie and harms falsifiability. Observed beats inferred; honest inference beats fake observation. Explicit inference can be upgraded when evidence arrives.
+
+6. Self-apply these rules before delivering/executing prompt. Reflection aids alignment. Catches laziness.

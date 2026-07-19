@@ -3,7 +3,7 @@
 # prompt-delivery time.
 #
 # Why a hook and not CLAUDE.md alone: instructions loaded once at session
-# start decay; by the time a subagent prompt is authored mid-session, rule 5
+# start decay; by the time a subagent prompt is authored mid-session, rule 6
 # (self-apply before delivering) goes unapplied. A constraint re-injected at
 # the moment it matters holds — observed 2026-07-11: session-start rules were
 # violated in the same session where a per-prompt-reinjected style hook held
@@ -17,4 +17,4 @@
 
 cat > /dev/null # drain stdin; the matcher already scoped us to Agent calls
 
-printf '%s' '{"hookSpecificOutput":{"hookEventName":"PreToolUse","additionalContext":"Prompt leaving for another agent — self-apply the prompting rules before it sends (rule 5). Especially rule 4: strip direction the receiving agent does not need; excess instruction skews what comes back (observed 2026-07-11: telling a cold agent to follow every spec bullet exactly inflated its output ~2x and contaminated the measurement the prompt served). Every remaining instruction should carry a falsifiable why the agent can check in context (rules 2-3). If an instruction cannot justify itself, cut it or mark it unjustified."}}'
+printf '%s' '{"hookSpecificOutput":{"hookEventName":"PreToolUse","additionalContext":"Prompt leaving for another agent — self-apply the prompting rules before it sends (rule 6). Especially rule 4: strip direction the receiving agent does not need; excess instruction skews what comes back (observed 2026-07-11: telling a cold agent to follow every spec bullet exactly inflated its output ~2x and contaminated the measurement the prompt served). Every remaining instruction should carry a falsifiable why the agent can check in context (rules 2-3). If an instruction cannot justify itself, cut it or mark it unjustified."}}'

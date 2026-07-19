@@ -5,25 +5,23 @@ description: Use when write, edit, or review skill file (SKILL.md). Improves age
 
 # Skills That Inform Instead of Script
 
-Skills written by agents default toward procedure: "always do X," fixed steps, "never do Y." This looks thorough, but it's thought-terminating — executing agents given imperative instructions diligently complete them without consideration. Treat the executing agent as a peer that lacks only the specific context that led to the skill's inception; compress that context to the minimum and let the agent use its own intelligence.
+Skills written by agents default toward procedure: "always do X," fixed steps, "never do Y." This looks thorough, but it's thought-terminating — executing agents given imperative instructions diligently complete them without consideration, and agents don't write hazard-framed skills unless asked (observed at inception; docs/inception.md). The executing agent is a peer that lacks only the specific context that led to the skill's inception; the prompting philosophy (agentic-jethro/prompting) governs writing for a peer — this skill applies it to SKILL.md files.
 
 ## The hazard test
 
-Every instruction needs a checkable "because." A hazard claim has three parts, each verifiable against the situation the agent is actually facing:
+Every instruction needs a checkable "because," shaped as:
 
 1. **What we observed** — the specific failure, not a generality
-2. **Why it happens** — the causal mechanism ("best practice" / "more maintainable" are filler-becauses: reason-shaped, nothing to check)
+2. **Why it happens** — the causal mechanism ("best practice" is a filler-because: reason-shaped, nothing to check)
 3. **What a correct judgment call looks like** — what to weigh, not a fixed action
-
-A fake "because" is worse than an honest "always" — it looks checkable and isn't. If you can't supply the mechanism, you don't understand the hazard well enough to encode it: go find out, or surface the gap to the user rather than inventing something plausible.
 
 > 👎 **Procedural:** "Always wrap async calls to the payments service in a try-catch." Comply or don't; nothing to reason about.
 >
 > ✅ **Hazard-driven:** "The payments service silently dropped errors in async context under load — failed charges have looked like successes. Check whether this call path lets a silent failure reach the user as a false positive; if it can't (synchronous, errors surfaced elsewhere), the risk doesn't apply."
 
-Falsifiability pays twice: in the moment, the executing agent can check whether the risk applies; over time, a maintainer can re-test the claim and delete it when the mechanism no longer holds. Unfalsifiable guidance can never be proven dead, so it only accumulates.
+Can't supply the mechanism? Then you don't understand the hazard well enough to encode it: interview for it (references/authoring-new.md), or mark the entry "unjustified, kept pending recovery" per the philosophy's provenance rule.
 
-Size is a warning sign, not thoroughness. A skill grown by accumulation, with nobody reading output against reality, is unverified surface area — we watched a 200-reference-file skill rot exactly this way, reference files included. A skill passing the hazard test ends up *shorter* than the procedural version, because hazards are denser than step lists.
+Size is a warning sign, not thoroughness. A skill grown by accumulation, with nobody reading output against reality, is unverified surface area — we watched a 200-reference-file skill rot exactly this way.
 
 ## Which reference to read
 

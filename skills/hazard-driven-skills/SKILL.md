@@ -1,6 +1,6 @@
 ---
 name: hazard-driven-skills
-description: Use this whenever writing, editing, or reviewing a Claude skill file (SKILL.md) intended for a competent, reasoning agent — especially skills meant to run with little or no human review of individual outputs. Prevents skills from collapsing into rigid step-by-step scripts that suppress the agent's judgment. Trigger this any time someone asks to "write a skill," "turn this workflow into a skill," "make this reusable for the agent," wants to update or clean up an existing skill, wants to encode a failure they just watched an agent make, or is reviewing a skill that feels overly prescriptive, bloated, or produces confident-looking output nobody has verified.
+description: Use when write, edit, or review skill file (SKILL.md). Improves agent alignment without suppressing intelligence. Load agentic-jethro/prompting skill as well.
 ---
 
 # Skills That Inform Instead of Script

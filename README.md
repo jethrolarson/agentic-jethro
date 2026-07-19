@@ -28,28 +28,32 @@ The prompting philosophy that hazard-driven-skills is built on, packaged as a sk
 
 ## The philosophy
 
-If you want the behavior ambient in every session rather than on-trigger — or you use a different coding agent entirely — append it to your project's `CLAUDE.md` or [`AGENTS.md`](https://agents.md/):
+If you want the behavior ambient in every session rather than on-trigger — or you use a different coding agent entirely — append it to your project's `CLAUDE.md` or [`AGENTS.md`](https://agents.md/) (the pipe strips the skill file's frontmatter):
 
 ```
-curl -s https://raw.githubusercontent.com/jethrolarson/agentic-jethro/main/CLAUDE.md >> CLAUDE.md
+curl -s https://raw.githubusercontent.com/jethrolarson/agentic-jethro/main/skills/prompting/SKILL.md | awk 'c==2;/^---$/{if(c<2)c++}' >> CLAUDE.md
 ```
 
-Or just tell Claude: `Add the # Prompting section from jethrolarson/agentic-jethro's CLAUDE.md to mine`.
+Or just tell Claude: `Add the rules from jethrolarson/agentic-jethro's skills/prompting/SKILL.md to my CLAUDE.md`.
 
-What you're installing:
+What you're installing (canonical copy lives in [skills/prompting/SKILL.md](skills/prompting/SKILL.md); this block is display only and CI-checked against it):
 
+<!-- philosophy-sync-start -->
 ```markdown
 # Prompting
 
-1. Prompt is *for* an agent. Write for and understand intended agent's knowledge and capability and *trust* them appropriately.
+1. Write for intended agent's knowledge/capability and *trust* them appropriately. Prompt aligns agent to goal. Alignment > precision. Aligned agent acts toward goal; precise but unaligned agent confidently wrong.
 
-2. Good prompts include *justification*. Agents without reason comply thoughtlessly. Thoughtful agent desirable.
+2. Good prompt include *justification*. Agent without reason comply thoughtlessly. Thoughtful agent desirable.
 
-3. Sound justifications *falsifiable*. Reason aligns agent to goal. Prevents misapplication. Agent assesses instruction against justification *within context* and can push back or pivot. False guidance can be tested and cleaned up. Unfalsifiable guidance accretes waste.
+3. Sound justification *falsifiable*. Reason aligns agent to goal. Prevents misapplication. Agent assess instruction against justification *within context* and can push back or pivot. False guidance can be tested and cleaned up. Unfalsifiable guidance accretes waste.
 
-4. Good instructions are *minimum* description of intent/values/boundaries/hazards/outcome. Alignment more important than precision. Excess description limits autonomy for no benefit. Every word tell.
+4. Good instructions are *minimum description* of intent/values/boundaries/hazards/outcome. Excess description limits autonomy for no benefit. Every word should serve alignment.
 
-5. Self-apply these rules before delivering/executing prompt. Reflection aids alignment. Catches laziness.
+5. Justifications need explicit provenance. An inferred reason stated as observed is a lie and harms falsifiability. Observed beats inferred; honest inference beats fake observation. Explicit inference can be upgraded when evidence arrives.
+
+6. Self-apply these rules before delivering/executing prompt. Reflection aids alignment. Catches laziness.
 ```
+<!-- philosophy-sync-end -->
 
-Why believe a few lines do anything? Fresh agents given only this philosophy (in its earlier prose wording) reconstructed the skill's methodology one-shot, and wrote specs that flagged unknowns as open questions instead of inventing requirements. The one trap they still fell into — fabricating plausible justifications for existing rules whose history was lost — is exactly what the skill exists to guard. Transcripts and reproduction instructions in [docs/validation.md](docs/validation.md).
+Why believe a few lines do anything? Fresh agents given only this philosophy reconstructed the skill's methodology one-shot, and wrote specs that flagged unknowns as open questions instead of inventing requirements. The trap earlier wordings fell into — fabricating plausible justifications for existing rules whose history was lost — is what rule 5 was added to close, and the rerun probes show it holding: every inferred reason marked at the claim, none dressed as history. Three rounds of transcripts and reproduction instructions in [docs/validation.md](docs/validation.md).

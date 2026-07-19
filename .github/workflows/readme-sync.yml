@@ -1,0 +1,21 @@
+# The README displays a copy of the prompting philosophy for the install
+# pitch; the canonical text lives in skills/prompting/SKILL.md (ADR-0003).
+# The copy drifted silently once (2026-07-18, three stale sites found by
+# hand) — this check makes drift fail loud instead.
+name: readme-sync
+
+on: [push, pull_request]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: README philosophy block matches skills/prompting/SKILL.md
+        run: |
+          awk 'c==2;/^---$/{if(c<2)c++}' skills/prompting/SKILL.md > /tmp/canonical.md
+          sed -n '/<!-- philosophy-sync-start -->/,/<!-- philosophy-sync-end -->/p' README.md | sed '1d;$d' | sed '1d;$d' > /tmp/mirror.md
+          diff -u /tmp/canonical.md /tmp/mirror.md || {
+            echo "README philosophy block drifted from skills/prompting/SKILL.md — resync the fenced block between the philosophy-sync markers."
+            exit 1
+          }

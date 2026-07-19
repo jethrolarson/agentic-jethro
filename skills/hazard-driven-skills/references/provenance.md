@@ -24,7 +24,7 @@ Maintainer metadata for the specimens cited in this skill — when observed, on 
 
 *Cited in:* `references/maintenance.md` (multi-file rot)
 
-- **Observed:** 2026-07-18/19, this repo: README philosophy block stale at three sites after a wording change; hooks/prompting-check.sh injected text stale after rule renumbering; installed plugin copy of the hook served the pre-fix text after the repo was corrected.
+- **Observed:** 2026-07-18/19, this repo: README philosophy block stale at three sites after a wording change; hooks/prompting-check.sh injected text stale after rule renumbering; installed plugin copy served pre-fix content after the repo was corrected — mechanism confirmed 2026-07-19: the plugin cache is keyed by plugin.json version, so an unbumped version makes staleness permanent ("update" refreshes the marketplace clone but extracts nothing; reload commands re-read the stale cache and truthfully report "no changes").
 - **Reverification:** git history (3eb6a8b..12f378c) plus session transcript.
 - **Last reverified:** 2026-07-19 (as observed).
 

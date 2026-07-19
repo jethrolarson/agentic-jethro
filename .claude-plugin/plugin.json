@@ -1,7 +1,7 @@
 {
   "name": "agentic-jethro",
-  "description": "Jethro's collection of Claude Code skills. Currently: hazard-driven-skills — write, edit, and review skill files as falsifiable hazard claims instead of thought-terminating procedures; prompting — the nine-line philosophy behind it, applied whenever writing instructions for another agent.",
-  "version": "0.4.0",
+  "description": "Jethro's collection of Claude Code skills. Currently: hazard-driven-skills — write, edit, and review skill files as falsifiable hazard claims instead of thought-terminating procedures; prompting — the six-rule philosophy behind it, applied whenever writing instructions for another agent.",
+  "version": "0.5.0",
   "author": {
     "name": "Jethro Larson",
     "email": "jethrolarson@gmail.com"

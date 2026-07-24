@@ -51,22 +51,20 @@ ships, not after.
 
 ## Skills
 
+### prompting
+
+Make agents better at giving instructions to other agents. Fires whenever Claude writes instructions for another agent to execute — prompts, specs, subagent tasks, CLAUDE.md content — and keeps them justified, falsifiable, and minimal.
+
 ### hazard-driven-skills
 
-Makes Claude write and review `SKILL.md` files as **falsifiable hazard claims** instead of scripts.
-
-By default skills written by agents are overspecified, procedural, and thought-terminating. Claude will give the next agent a confident but wrong instruction that it will often thoughtlessly execute without considering the context fully. This skill guides the agent to work with you to write skills that are hazard-driven to prevent pitfalls while still letting the executing agent use its intelligence. This skill will help you create, update and maintain skill files that minimize accretion and discourage creating zombie agents.
+This skill guides the agent to work with you to write skills that are hazard-driven to prevent pitfalls while still letting the executing agent use its intelligence. This skill will help you create, update and maintain skill files that minimize accretion and discourage creating zombie agents.
 
 Example prompts:
 * `Can you use hazard driven skills to prevent that last screw-up next time?`
 * `Can you audit my-unit-testing-guide skill using hazard-driven-skills?`
 * `Seems like you wasted a lot of tokens there, can you update the oncall-ops skill so the next agent doesn't do the same?`
 
-### prompting
-
-The prompting philosophy that hazard-driven-skills is built on, packaged as a skill of its own. Fires whenever Claude writes instructions for another agent to execute — prompts, specs, subagent tasks, CLAUDE.md content — and keeps them justified, falsifiable, and minimal. Installed with the plugin; nothing extra to do.
-
-### grill-me
+### grill-me (ALPHA)
 
 Interviews you exhaustively before starting ambiguous or open-ended work. Maps the request as a design tree, works it in dependency-ordered rounds (the "frontier"), dispatches subagents for anything discoverable instead of asking you for it, and won't start work until every branch is resolved.
 
@@ -74,7 +72,7 @@ Example prompts:
 * `Grill me on this before you touch any code.`
 * `Interview me first — I don't want you guessing at the API shape.`
 
-Derived from Matt Pocock's [`batch-grill-me`](https://github.com/mattpocock/skills/blob/main/skills/in-progress/batch-grill-me/SKILL.md), which introduced the frontier/design-tree interview mechanic — see [skills/grill-me/LICENSE](skills/grill-me/LICENSE) for its original MIT notice. This version routes recommendations through `AskUserQuestion`'s structured `description` field instead of free text, so every recommendation carries a justification by construction.
+Based on Matt Pocock's [`batch-grill-me`](https://github.com/mattpocock/skills/blob/main/skills/in-progress/batch-grill-me/SKILL.md).
 
 ## The philosophy
 

@@ -3,21 +3,37 @@
 ```
 > What is agentic-jethro?
 
-• A small skills library aimed at improving autonomy of agents by focusing on prompt alignment. Thesis is: Modern LLMs are smart but will comply thoughtlessly if not given user motivation. They claim agents given falsifiable reasons rather than just procedure more reliably do the right thing when instructions don't exactly match the situation.
+• A small skills library aimed at improving autonomy of agents by focusing on
+prompt alignment. Thesis is: Modern LLMs are smart but will comply thoughtlessly
+if not given user motivation. They claim agents given falsifiable reasons rather
+than just procedure more reliably do the right thing when instructions don't
+exactly match the situation.
 
-Three skills apply that: `prompting` (the philosophy itself), `hazard-driven-skills` (applies it to SKILL.md authoring), `grill-me` (applies it to gathering requirements before ambiguous work starts).
+Three skills apply that: `prompting` (the philosophy itself),
+`hazard-driven-skills` (applies it to SKILL.md authoring), `grill-me` (applies
+it to gathering requirements before ambiguous work starts).
 
 > Are they right?
 
-• They claim to have tested it and there's records in the repo — fresh agents given only the philosophy reconstructed the methodology unprompted. One test caught the rules being gamed, which is why rule 5 exists. Held up since.
+• They claim to have tested it and there's records in the repo — fresh agents
+given only the philosophy reconstructed the methodology unprompted. One test
+caught the rules being gamed, which is why rule 5 exists. Held up since.
 
 > When would I use it?
 
-• Anytime you're writing instructions another agent. But you don't have to invoke it manually — The `prompting` skill triggers when writing memories, skills, specs, handoff docs, or delegating to sub agents. It self-applies too: rule 6 has me check my own output against these rules before delivering it, not just follow them once and move on.
+• Anytime you're writing instructions another agent. But you don't have to
+invoke it manually — The `prompting` skill triggers when writing memories,
+skills, specs, handoff docs, or delegating to sub agents. It self-applies too:
+rule 6 has me check my own output against these rules before delivering it, not
+just follow them once and move on.
 
 > Why does self-application matter?
 
-• It's the only rule that checks whether the other five actually happened, instead of just sounding like they did. An agent can write a justified, falsifiable, minimal-looking instruction that it never actually verified — confident, plausible, wrong. Rule 6 is the pause that catches that before it ships, not after.
+• It's the only rule that checks whether the other five actually happened,
+instead of just sounding like they did. An agent can write a justified,
+falsifiable, minimal-looking instruction that it never actually verified —
+confident, plausible, wrong. Rule 6 is the pause that catches that before it
+ships, not after.
 
 > How do I install it?
 

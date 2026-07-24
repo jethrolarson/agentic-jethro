@@ -6,7 +6,6 @@
 • A small skills library aimed at improving autonomy of agents by focusing on prompt alignment. Thesis is: Modern LLMs are smart but will comply thoughtlessly if not given user motivation. They claim agents given falsifiable reasons rather than just procedure more reliably do the right thing when instructions don't exactly match the situation.
 
 Three skills apply that: `prompting` (the philosophy itself), `hazard-driven-skills` (applies it to SKILL.md authoring), `grill-me` (applies it to gathering requirements before ambiguous work starts).
-```
 
 > Are they right?
 

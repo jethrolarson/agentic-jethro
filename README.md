@@ -49,6 +49,36 @@ ships, not after.
 /plugin install agentic-jethro@agentic-jethro
 ```
 
+## OpenCode
+
+Same plugin, opencode-native. Install the npm plugin `agentic-jethro`:
+
+```
+opencode plugin agentic-jethro
+```
+
+or add it to your `opencode.json`:
+
+```json
+{
+  "plugin": ["agentic-jethro"]
+}
+```
+
+It does two things:
+
+- Registers the `prompting`, `hazard-driven-skills`, and `grill-me` skills from
+  the package (the `config` hook adds the bundled `skills/` dir to
+  `skills.paths`).
+- Re-injects the prompting self-apply rule into every subagent prompt at the
+  delivery site — the `tool.execute.before` hook prepends the delivery check to
+  `task` tool prompts, closing the timing gap the Claude hook's
+  next-prompt-only injection leaves behind (ADR-0008).
+
+Verify with `opencode debug skill` — the three skills should be listed with
+locations under the package. The philosophy append-to-`CLAUDE.md` block above
+works for opencode too (it reads `AGENTS.md`).
+
 ## Skills
 
 ### prompting

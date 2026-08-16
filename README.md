@@ -94,16 +94,6 @@ Example prompts:
 * `Can you audit my-unit-testing-guide skill using hazard-driven-skills?`
 * `Seems like you wasted a lot of tokens there, can you update the oncall-ops skill so the next agent doesn't do the same?`
 
-### grill-me (ALPHA)
-
-Interviews you exhaustively before starting ambiguous or open-ended work. Maps the request as a design tree, works it in dependency-ordered rounds (the "frontier"), dispatches subagents for anything discoverable instead of asking you for it, and won't start work until every branch is resolved.
-
-Example prompts:
-* `Grill me on this before you touch any code.`
-* `Interview me first — I don't want you guessing at the API shape.`
-
-Based on Matt Pocock's [`batch-grill-me`](https://github.com/mattpocock/skills/blob/main/skills/in-progress/batch-grill-me/SKILL.md).
-
 ## The philosophy
 
 If you want the behavior ambient in every session rather than on-trigger — or you use a different coding agent entirely — append it to your project's `CLAUDE.md` or [`AGENTS.md`](https://agents.md/) (the pipe strips the skill file's frontmatter):

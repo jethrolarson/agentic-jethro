@@ -1,7 +1,7 @@
 {
   "name": "agentic-jethro",
   "version": "0.5.0",
-  "description": "OpenCode plugin for agentic-jethro: registers the prompting, hazard-driven-skills, and grill-me skills and re-injects the prompting self-apply rule at subagent-prompt delivery time (ports the Claude Code plugin's PreToolUse[Agent] hook).",
+  "description": "OpenCode plugin for agentic-jethro: registers the prompting, justified-skills, and elicit skills and re-injects the prompting self-apply rule at subagent-prompt delivery time (ports the Claude Code plugin's PreToolUse[Agent] hook).",
   "type": "module",
   "main": "src/index.ts",
   "types": "src/index.ts",

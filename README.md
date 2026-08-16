@@ -10,8 +10,9 @@ than just procedure more reliably do the right thing when instructions don't
 exactly match the situation.
 
 Three skills apply that: `prompting` (the philosophy itself),
-`hazard-driven-skills` (applies it to SKILL.md authoring), `grill-me` (applies
-it to gathering requirements before ambiguous work starts).
+`justified-skills` (applies it to SKILL.md authoring), `elicit` (a maieutic
+approach for drawing out a half-formed idea before ambiguous work starts —
+manual-invoke only, doesn't build on the philosophy directly).
 
 > Are they right?
 
@@ -67,7 +68,7 @@ or add it to your `opencode.json`:
 
 It does two things:
 
-- Registers the `prompting`, `hazard-driven-skills`, and `grill-me` skills from
+- Registers the `prompting`, `justified-skills`, and `elicit` skills from
   the package (the `config` hook adds the bundled `skills/` dir to
   `skills.paths`).
 - Re-injects the prompting self-apply rule into every subagent prompt at the
@@ -85,14 +86,18 @@ works for opencode too (it reads `AGENTS.md`).
 
 Make agents better at giving instructions to other agents. Fires whenever Claude writes instructions for another agent to execute — prompts, specs, subagent tasks, CLAUDE.md content — and keeps them justified, falsifiable, and minimal.
 
-### hazard-driven-skills
+### justified-skills
 
-This skill guides the agent to work with you to write skills that are hazard-driven to prevent pitfalls while still letting the executing agent use its intelligence. This skill will help you create, update and maintain skill files that minimize accretion and discourage creating zombie agents.
+Guides writing, editing, and reviewing skill files as tagged instructions (`SHOULD`/`MUST`/`HAZARD`/`REASON`/`CONTEXT`) instead of bare procedure, so a maintainer can scan a generated skill and check each part is actually justified rather than templated-empty. Builds on `prompting`.
 
 Example prompts:
-* `Can you use hazard driven skills to prevent that last screw-up next time?`
-* `Can you audit my-unit-testing-guide skill using hazard-driven-skills?`
+* `Can you use justified-skills to prevent that last screw-up next time?`
+* `Can you audit my-unit-testing-guide skill using justified-skills?`
 * `Seems like you wasted a lot of tokens there, can you update the oncall-ops skill so the next agent doesn't do the same?`
+
+### elicit
+
+Maieutic elicitation for when you have a half-formed idea and want it drawn out through guided questions rather than solved for you. Manual-invoke only (`/elicit`) — it doesn't fire automatically.
 
 ## The philosophy
 

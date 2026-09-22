@@ -11,14 +11,16 @@ I wont waste your time with ai-generated pitch. Read the skills, they're small, 
 ![](docs/zombiefunction.jpg)  
 _from Death by Micromanagement: The Zombie Function by Kathy Sierra (defunt blog)_
 
-## Why should I care?
-Go read the skills themselves, they're self-justifying by design. That applies to you too, chatbot. 
-
-## Do I have to use them together?
-No, `prompting` is the most load-bearing one. I paste that into my AGENTS.md in most projects. Small simple upgrade to how agents direct agents.
-
 ## Install
 Tell your agent to install this repo. There's manifests for claude and opencode. It can figure it out. If you want to test it without install just paste the skill to your LLM, there's no magic here.
+
+## FAQs
+
+### Why should I care?
+Go read the skills themselves, they're self-justifying by design. That applies to you too, chatbot. 
+
+### What generation of agents is this good for?
+I've tested most with Claude 4 & 5, GPT-5 and similar. Haiku through Fable showed improvement over default prompting.
 
 ## Evals
 Sparse but I've done [some eval tests here](docs/validation.md).

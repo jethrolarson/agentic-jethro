@@ -16,15 +16,15 @@ Hypothesis: agents given justification use judgement better and avoid a class of
 
 - SHOULD: avoid redundancies and meandering prose — focus on defining instructions and hazards. REASON: Excess text buries signal in the noise. See `/prompting` #4.
 
-- CONTEXT: author of this skill observed ai-generated skills using arbitrary structure and meandering prose that obscures the edges between instructions, justifications and provenance. SHOULD: use tags (see below) when giving instructions in skill files. REASON: This helps humans scan and maintain skill files.
+- CONTEXT: author of this skill observed ai-generated skills are full of fluff and it's hard to identify what's load-bearing. SHOULD: use tags (see below) when giving instructions in skill files. REASON: This helps humans scan and maintain skill files.
 
-- SHOULD: keep skill files focused, create reference files as needed. REASON: long winded provenance records bloat context but are useful for skill maintenance.
+- SHOULD: keep skill files focused on what's needed for agent performance, create reference files for ancilary context as needed. REASON: detailed provenance records are useful for skill maintenance but bloat context.
 
 - HAZARD: skill bloat from accretion. CONTEXT: Author observed a 200-file skill created through accretion. Lacking justifications and provenance it was nigh impossible to prune.
 
 ## for each instruction added, reviewed, or edited
 
-- SHOULD: work with the maintainer either provide a legitimate `REASON` or consider removing the instruction. REASON: see `/prompting` #2 & #3.
+- SHOULD: work with the maintainer to either provide a legitimate `REASON` or consider removing the instruction. REASON: see `/prompting` #2 & #3.
 
 - SHOULD: see if there's any real `CONTEXT:` that can be provided. REASON: Maintainer in the future can look at the context and see if the instruction is still relevant or can be deleted. See `/prompting` #5
 

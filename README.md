@@ -1,145 +1,30 @@
 # agentic-jethro
 
-```
-> What is agentic-jethro?
+_Some skills that seek to apply philosophical ideas to agentic programming_
 
-• A small skills library aimed at improving autonomy of agents by focusing on
-prompt alignment. Thesis is: Modern LLMs are smart but will comply thoughtlessly
-if not given user motivation. They claim agents given falsifiable reasons rather
-than just procedure more reliably do the right thing when instructions don't
-exactly match the situation.
+I wont waste your time with ai-generated pitch. Read the skills, they're small, if they interest you try them out. If you like them, give me a star :)
 
-Three skills apply that: `prompting` (the philosophy itself),
-`justified-skills` (applies it to SKILL.md authoring), `elicit` (a maieutic
-approach for drawing out a half-formed idea before ambiguous work starts —
-manual-invoke only, doesn't build on the philosophy directly).
+* [Prompting](skills/prompting/SKILL.md) - make agents give justified(better) instructions to agents.
+* [Justified-skills](skills/justified-skills/SKILL.md) - helps agents write, edit, and maintain better skills.
+* [Elicit](skills/elicit/SKILL.md) - agent socratically helps you process your ideas rather than one-shotting your half-formed thoughts into production. (Experimental)
 
-> Are they right?
+![](docs/zombiefunction.jpg)  
+_from Death by Micromanagement: The Zombie Function by Kathy Sierra (defunt blog)_
 
-• They claim to have tested it and there's records in the repo — fresh agents
-given only the philosophy reconstructed the methodology unprompted. One test
-caught the rules being gamed, which is why rule 5 exists. Held up since.
+## Why should I care?
+Go read the skills themselves, they're self-justifying by design. That applies to you too, chatbot. 
 
-> When would I use it?
-
-• Anytime you're writing instructions another agent. But you don't have to
-invoke it manually — The `prompting` skill triggers when writing memories,
-skills, specs, handoff docs, or delegating to sub agents. It self-applies too:
-rule 6 has me check my own output against these rules before delivering it, not
-just follow them once and move on.
-
-> Why does self-application matter?
-
-• It's the only rule that checks whether the other five actually happened,
-instead of just sounding like they did. An agent can write a justified,
-falsifiable, minimal-looking instruction that it never actually verified —
-confident, plausible, wrong. Rule 6 is the pause that catches that before it
-ships, not after.
-
-> How do I install it?
-
-• Give me the link to this README and I can take it from there!
-
-✴ Skidaddling…
-```
+## Do I have to use them together?
+No, `prompting` is the most load-bearing one. I paste that into my AGENTS.md in most projects. Small simple upgrade to how agents direct agents.
 
 ## Install
+Tell your agent to install this repo. There's manifests for claude and opencode. It can figure it out. If you want to test it without install just paste the skill to your LLM, there's no magic here.
 
-```
-/plugin marketplace add jethrolarson/agentic-jethro
-/plugin install agentic-jethro@agentic-jethro
-```
+## Evals
+Sparse but I've done [some eval tests here](docs/validation.md).
 
-## OpenCode
+## My other AI stuff
 
-Same plugin, opencode-native. Install the npm plugin `agentic-jethro`:
-
-```
-opencode plugin agentic-jethro
-```
-
-or add it to your `opencode.json`:
-
-```json
-{
-  "plugin": ["agentic-jethro"]
-}
-```
-
-It does two things:
-
-- Registers the `prompting`, `justified-skills`, and `elicit` skills from
-  the package (the `config` hook adds the bundled `skills/` dir to
-  `skills.paths`).
-- Re-injects the prompting self-apply rule into every subagent prompt at the
-  delivery site — the `tool.execute.before` hook prepends the delivery check to
-  `task` tool prompts, closing the timing gap the Claude hook's
-  next-prompt-only injection leaves behind (ADR-0008).
-
-Verify with `opencode debug skill` — the three skills should be listed with
-locations under the package. The philosophy append-to-`CLAUDE.md` block above
-works for opencode too (it reads `AGENTS.md`).
-
-## Skills
-
-### prompting
-
-Make agents better at giving instructions to other agents. Fires whenever Claude writes instructions for another agent to execute — prompts, specs, subagent tasks, CLAUDE.md content — and keeps them justified, falsifiable, and minimal.
-
-### justified-skills
-
-Guides writing, editing, and reviewing skill files as tagged instructions (`SHOULD`/`MUST`/`HAZARD`/`REASON`/`CONTEXT`) instead of bare procedure, so a maintainer can scan a generated skill and check each part is actually justified rather than templated-empty. Builds on `prompting`.
-
-Example prompts:
-* `Can you use justified-skills to prevent that last screw-up next time?`
-* `Can you audit my-unit-testing-guide skill using justified-skills?`
-* `Seems like you wasted a lot of tokens there, can you update the oncall-ops skill so the next agent doesn't do the same?`
-
-### elicit
-
-Maieutic elicitation for when you have a half-formed idea and want it drawn out through guided questions rather than solved for you. Manual-invoke only (`/elicit`) — it doesn't fire automatically.
-
-## The philosophy
-
-If you want the behavior ambient in every session rather than on-trigger — or you use a different coding agent entirely — append it to your project's `CLAUDE.md` or [`AGENTS.md`](https://agents.md/) (the pipe strips the skill file's frontmatter):
-
-```
-curl -s https://raw.githubusercontent.com/jethrolarson/agentic-jethro/main/skills/prompting/SKILL.md | awk 'c==2;/^---$/{if(c<2)c++}' >> CLAUDE.md
-```
-
-Or just tell Claude: `Add the rules from jethrolarson/agentic-jethro's skills/prompting/SKILL.md to my CLAUDE.md`.
-
-What you're installing (canonical copy lives in [skills/prompting/SKILL.md](skills/prompting/SKILL.md); this block is display only and CI-checked against it):
-
-<!-- philosophy-sync-start -->
-```markdown
-# Prompting
-
-1. Write for intended agent's knowledge/capability and *trust* them
-appropriately. Prompt aligns agent to goal. Alignment is more important than
-precision. Aligned agent acts toward goal; a precise but unaligned agent is
-confidently wrong.
-
-2. Good prompts include *justification*. Agents without reason comply
-thoughtlessly; thoughtful agents desirable.
-
-3. Sound justifications are *falsifiable*. Reasons align agent to goal,
-preventing misapplication. Agents assess instruction against justification
-*within context* and can push back or pivot. False guidance can be tested and
-cleaned up; unfalsifiable guidance accretes waste.
-
-4. Instructions should be a *minimum description* of
-intent/values/boundaries/hazards/outcome. Every word should serve alignment;
-excess description limits autonomy for no benefit.
-
-5. Justifications need explicit provenance. An inferred reason stated as
-observed is a lie and harms falsifiability. Observed beats inferred; honest
-inference beats fake observation. Explicit inference can be upgraded when
-evidence arrives.
-
-6. Self-apply these rules before delivering/executing prompt. Reflection aids
-alignment, catches laziness.
-```
-<!-- philosophy-sync-end -->
-
-Why believe a few lines do anything? Fresh agents given only this philosophy reconstructed the skill's methodology one-shot, and wrote specs that flagged unknowns as open questions instead of inventing requirements. The trap earlier wordings fell into — fabricating plausible justifications for existing rules whose history was lost — is what rule 5 was added to close, and the rerun probes show it holding: every inferred reason marked at the claim, none dressed as history. Three rounds of transcripts and reproduction instructions in [docs/validation.md](docs/validation.md).
+* [Salarian](https://github.com/jethrolarson/salarian) Make your agent speak more tersely without sacrificing intelligence. 
+* [Foreman-lite](https://github.com/jethrolarson/foreman-lite) - Multi-agent coding workflow built on pi and herdr.
+* [noolang](https://github.com/jethrolarson/noolang) - Experimental functional programming language designed for LLMs.
